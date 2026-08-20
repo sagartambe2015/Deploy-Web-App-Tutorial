@@ -1,376 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sagar Tambe - Software Architect</title>
-    <style>
-        :root {
-            --primary-color: #0056b3; 
-            --secondary-color: #004085; 
-            --accent-color: #007bff; 
-            --whatsapp-color: #25D366;
-            --text-color: #2c3e50; 
-            --page-bg: #f0f8ff; 
-            --container-bg: #ffffff; 
-            --border-color: #cce5ff; 
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--page-bg);
-            margin: 0;
-            padding: 40px 20px;
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: auto;
-            background: var(--container-bg);
-            padding: 50px;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 86, 179, 0.1);
-            border-top: 8px solid var(--primary-color);
-        }
-        
-        header {
-            text-align: center;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 25px;
-            margin-bottom: 30px;
-        }
-        
-        header h1 {
-            margin: 0;
-            color: var(--primary-color);
-            font-size: 2.8em;
-            letter-spacing: 1px;
-        }
-        
-        header h2 {
-            margin: 5px 0;
-            color: var(--secondary-color);
-            font-weight: 400;
-            font-size: 1.4em;
-        }
-        
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 15px;
-            font-size: 0.95em;
-            font-weight: 500;
-        }
-        
-        .contact-info a {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-        
-        .contact-info a:hover {
-            color: var(--secondary-color);
-            text-decoration: underline;
-        }
-
-        .contact-info a.whatsapp-link {
-            color: var(--whatsapp-color);
-            font-weight: bold;
-        }
-
-        .contact-info a.whatsapp-link:hover {
-            color: #128C7E;
-        }
-        
-        section {
-            margin-bottom: 35px;
-        }
-        
-        h3 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 8px;
-            margin-top: 0;
-            font-size: 1.3em;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-            background-color: #ffffff;
-        }
-        
-        th, td {
-            padding: 12px 15px;
-            border: 1px solid var(--border-color);
-            text-align: left;
-        }
-        
-        th {
-            background-color: #e6f2ff; 
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-        
-        td strong {
-            color: var(--secondary-color);
-        }
-        
-        .experience-item {
-            margin-bottom: 25px;
-            padding: 15px;
-            background-color: #fafbfc;
-            border-left: 4px solid var(--accent-color);
-            border-radius: 0 4px 4px 0;
-        }
-        
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-        }
-        
-        .experience-header h4 {
-            margin: 0;
-            color: var(--primary-color);
-            font-size: 1.2em;
-        }
-        
-        .experience-header span {
-            font-size: 0.95em;
-            color: #555;
-            font-weight: 600;
-            background-color: #e6f2ff;
-            padding: 3px 8px;
-            border-radius: 4px;
-        }
-        
-        .role {
-            font-weight: bold;
-            color: var(--secondary-color);
-            margin: 8px 0;
-            font-size: 1.05em;
-        }
-        
-        ul {
-            margin: 10px 0;
-            padding-left: 20px;
-        }
-        
-        li {
-            margin-bottom: 8px;
-        }
-        
-        .education-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 12px;
-            padding: 10px;
-            background-color: #f8fbff;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-        }
-        
-        .education-item strong {
-            color: var(--secondary-color);
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VPS Fetch/Write Demo</title>
+  <style>
+    body{font-family:system-ui,Arial;padding:2rem;max-width:760px;margin:auto;line-height:1.5}
+    .card{padding:1rem;border:1px solid #ddd;border-radius:12px;margin:1rem 0}
+    .row{margin:.75rem 0}
+    button{padding:.6rem 1rem;cursor:pointer}
+    .ok{color:green}.err{color:#b00020}
+    pre{background:#fafafa;border:1px solid #eee;padding:1rem;border-radius:8px;overflow:auto}
+  </style>
+<script defer src="https://analytics.myvpsdemo.cloud/script.js" data-website-id="e969b131-9fa9-433d-b387-86aaf51a4525"></script>
 </head>
 <body>
-
-<div class="container">
-    <header>
-        <h1>SAGAR TAMBE</h1>
-        <h2>Software Architect</h2>
-        <div class="contact-info">
-            <span>📍 Pune, India</span>
-            <span>📞 9664690404 / 9137617465</span>
-            <span>💬 <a href="https://wa.me/919664690404" target="_blank" class="whatsapp-link">WhatsApp Me</a></span>
-            <span>✉ <a href="mailto:tambe.sagar@gmail.com">tambe.sagar@gmail.com</a></span>
-            <span>🌐 <a href="http://www.sagarsudhirtambe.com" target="_blank">sagarsudhirtambe.com</a></span>
-            <span>🔗 <a href="https://linkedin.com/in/sagar-tambe-41007a37" target="_blank">LinkedIn</a></span>
-        </div>
-    </header>
-
-    <section id="executive-summary">
-        <h3>EXECUTIVE SUMMARY</h3>
-        <p>Software Architect with 10+ years of experience in system design, architecture definition, and large-scale distributed systems, primarily in banking, payments, and financial platforms. Specialized in designing high-availability, low-latency, and fault-tolerant systems using Java, microservices, event streaming, and cloud-native platforms. Total career span of 15+ years in Java Software Application Development with UI technology and architecture.</p>
-    </section>
-
-    <section id="architecture-expertise">
-        <h3>ARCHITECTURE EXPERTISE</h3>
-        <ul>
-            <li><strong>System Design:</strong> High-Level Design (HLD), Low-Level Design (LLD), Microservices Architecture, Event-Driven & Streaming Architecture, Domain-Driven Design (DDD), and CQRS.</li>
-            <li><strong>Scalability & Reliability:</strong> Low-latency trade processing systems, Caching strategies (Redis, Gem Fire), Disaster Recovery, and High Availability.</li>
-            <li><strong>Observability:</strong> Metrics, Logging, and Tracing Design using Open Telemetry, Grafana, and Kibana.</li>
-        </ul>
-    </section>
-
-    <section id="technical-skills">
-        <h3>TECHNICAL SKILLS</h3>
-        <table>
-            <tbody>
-                <tr><th>Languages</th><td>Java (8, 11, 17), Kotlin, Python, SQL</td></tr>
-                <tr><th>Frameworks</th><td>Spring Boot, Spring Integration, Hibernate, Struts</td></tr>
-                <tr><th>Streaming & Messaging</th><td>Apache Kafka, Apache Flink, IBM MQ, TIBCO, JMS</td></tr>
-                <tr><th>Databases</th><td>Oracle, PostgreSQL, MySQL, MongoDB</td></tr>
-                <tr><th>Cloud & Platforms</th><td>AWS (EC2, S3, RDS, EKS), OpenShift, Kubernetes, Docker</td></tr>
-                <tr><th>UI Technologies</th><td>Angular, AngularJS, Node.js, D3.js, Bootstrap</td></tr>
-                <tr><th>AI Skills</th><td>Context Engineering with Claude Code, Prompt Engineering with Co-pilot, Data Analytics and Pre-Processing</td></tr>
-            </tbody>
-        </table>
-    </section>
-
-    <section id="domain-expertise">
-        <h3>DOMAIN EXPERTISE</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Domain / Company</th>
-                    <th>Years of Experience</th>
-                    <th>Skills</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Market Domain</strong><br>Citi Bank</td>
-                    <td>11</td>
-                    <td>FIX 4.2/4.4, FIXML, Exchange-specific APIs, E&A, Cash Ledgering, Margin/Collateral, FxFlat, Trade Matching, MiFID -2, EMER Reporting, GIFT Exchange Onboarding, Trade Reporting, Order Management System.</td>
-                </tr>
-                <tr>
-                    <td><strong>Payment Domain</strong><br>Polaris – Citi Bank</td>
-                    <td>4</td>
-                    <td>(Transaction Banking and Payment Gateway)<br>Cross Border Fund Transfer, SEPA, SEPABULK, Mercury ACH, Infrastructures - SWIFT, ACH, SEPA, Mass payment etc.</td>
-                </tr>
-                <tr>
-                    <td><strong>Healthcare Domain</strong><br>CitiusTech</td>
-                    <td>1.5</td>
-                    <td>Technical protocols (HL7, FHIR, SNOMED CT)</td>
-                </tr>
-                <tr>
-                    <td><strong>Marketing Domain</strong></td>
-                    <td>0.8</td>
-                    <td>Affiliate marketing</td>
-                </tr>
-                <tr>
-                    <td><strong>Innovation and Technology</strong></td>
-                    <td>1.8</td>
-                    <td>Container Management, Automated Car Parking Solution, CCI Display Management, RFID Integration with Microsoft Biztalk or Java Low Level API</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <section id="professional-experience">
-        <h3>PROFESSIONAL EXPERIENCE</h3>
-
-        <div class="experience-item">
-            <div class="experience-header">
-                <h4>CITI Bank, Pune</h4>
-                <span>Feb 2017 – Present</span>
-            </div>
-            <div class="role">Senior Software Lead (Assistant Vice President)</div>
-            <p><strong>Project:</strong> FUSION-CV-TMG-GMI | Post-Trade Clearing Platform for Exchange Traded Derivatives</p>
-            <ul>
-                <li><strong>Team Leadership:</strong> Lead a 5-member team managing a proprietary post-trade clearing platform for Exchange Traded Derivatives.</li>
-                <li><strong>Global Connectivity:</strong> Architected FIX/FIXML-based connectivity for 20+ global clearing houses, including SGX, CME, EUREX, and HKE.</li>
-                <li><strong>Full Lifecycle Expertise:</strong> Deep technical knowledge of front-to-back-office systems, encompassing OMS, trade matching, allocation, and post-trade reporting.</li>
-                <li><strong>Cloud-Native Integration:</strong> Modernized GMI (Global Trade Clearing & Accounting) by deploying a cloud-native, scalable pub-sub architecture to synchronize multiple upstream data sources with sub-millisecond reliability.</li>
-                <li><strong>Core Clearing Logic:</strong> Engineered sophisticated modules for Exercise and Assignment (E&A) and FxFlat positioning, ensuring precise lifecycle management for derivative contracts.</li>
-                <li><strong>Treasury & Cash Management:</strong> Developed a high-scale Cash Management Ledger covering Equity, Treasury, and Margin use cases, providing real-time visibility into liquidity and firm-wide balances.</li>
-                <li><strong>Collateral Optimization:</strong> Architected Cash as Collateral workflows to automate margin requirements, optimizing capital efficiency across multiple clearing houses.</li>
-            </ul>
-        </div>
-
-        <div class="experience-item">
-            <div class="experience-header">
-                <h4>CitiusTech, Mumbai</h4>
-                <span>Sep 2015 – Jan 2017</span>
-            </div>
-            <div class="role">Technical Lead</div>
-            <ul>
-                <li><strong>IBM Watson User-Admin Module:</strong> Led the replacement rewrite of an existing .NET application into a modern Java/Angular-based web application.</li>
-                <li><strong>LIMS (PPD):</strong> Developed a new application for the Generic Serial Dilution Assay module within Laboratory Information Management Systems.</li>
-            </ul>
-        </div>
-
-        <div class="experience-item">
-            <div class="experience-header">
-                <h4>Polaris Software Lab Ltd, Mumbai</h4>
-                <span>Aug 2011 – Sep 2015</span>
-            </div>
-            <div class="role">Technical Lead</div>
-            <ul>
-                <li>Architected a critical banking transaction processing hub (RCX Hub) serving as middleware for upstream and downstream systems.</li>
-                <li>Designed integrations using Java 7, Spring 3, and IBM MQ on Websphere Server.</li>
-            </ul>
-        </div>
-
-        <div class="experience-item">
-            <div class="experience-header">
-                <h4>ILead Technologies, Mumbai</h4>
-                <span>Dec 2010 – Jun 2011</span>
-            </div>
-            <div class="role">Senior Software Developer</div>
-            <ul>
-                <li>Developed affiliate marketing platforms (Inboxpays.com) with broadcast and auto-responder mailing modules using JMS and Java Mail API.</li>
-            </ul>
-        </div>
-
-        <div class="experience-item">
-            <div class="experience-header">
-                <h4>Essen Finance, Mumbai</h4>
-                <span>Aug 2009 – Sep 2010</span>
-            </div>
-            <div class="role">Software Developer</div>
-            <ul>
-                <li>Collaborated on RFID-based software solutions including car parking, attendance management, and CCTV-enabled security systems.</li>
-            </ul>
-        </div>
-
-        <div class="experience-item">
-            <div class="experience-header">
-                <h4>Paramatrix, Mumbai</h4>
-                <span>Jun 2007 – Aug 2008</span>
-            </div>
-            <div class="role">Junior Software Developer</div>
-            <ul>
-                <li>Developed the 'SCRABS-MoneyLive' User Admin Module for equity and investment markets.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="education">
-        <h3>EDUCATION</h3>
-        <div class="education-item">
-            <span><strong>MBA: Information Technology</strong> - Welingkar Institute, Mumbai</span>
-            <span>2017</span>
-        </div>
-        <div class="education-item">
-            <span><strong>Bachelor of Science: Information Technology</strong> - Mumbai University</span>
-            <span>2007</span>
-        </div>
-    </section>
-
-    <section id="certifications-achievements">
-        <h3>CERTIFICATIONS & ACHIEVEMENTS</h3>
-        <ul>
-            <li>PG Diploma in AI/ML — Purdue University</li>
-            <li>Sun Certified Java Business Component Developer (SCBCD)</li>
-            <li>Sun Certified Java Programmer (SCJP)</li>
-            <li>MCTS: Microsoft SQL Server 2008 Database Development</li>
-            <li><strong>Awards:</strong> Multiple Gratitude awards from Citi; Delivery awards from CitiusTech and Polaris.</li>
-        </ul>
-    </section>
-
-</div>
-
+  <h1>VPS Fetch/Write Demo</h1>
+  <p>This page is served by Node.js on your VPS. Use the buttons to call real API routes.</p>
+  <div class="card">
+    <h3>Read: Fetch Data (GET)</h3>
+    <div class="row">
+      <button id="getBtn">Fetch Data</button>
+      <span id="getMsg"></span>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Write: Save an Event (POST)</h3>
+    <div class="row">
+      <button id="writeBtn">Write Data</button>
+      <span id="writeMsg"></span>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Metrics (Live)</h3>
+    <pre id="metricsBox">Loading…</pre>
+  </div>
+<script>
+const $ = (id)=>document.getElementById(id);
+async function getJSON(url, opts){ const r=await fetch(url,opts); if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); }
+$('getBtn').onclick = async () => {
+  try {
+    const data = await getJSON('/api/time');
+    $('getMsg').textContent = 'Server time: ' + data.time;
+    $('getMsg').className = 'ok';
+    window.umami?.track('fetch_data');
+  } catch {
+    $('getMsg').textContent = 'Error';
+    $('getMsg').className = 'err';
+  }
+};
+$('writeBtn').onclick = async () => {
+  try {
+    const data = await getJSON('/api/demo-write', { method:'POST' });
+    $('writeMsg').textContent = 'Writes so far: ' + data.total;
+    $('writeMsg').className = 'ok';
+    window.umami?.track('write_data');
+    loadMetrics();
+  } catch {
+    $('writeMsg').textContent = 'Error';
+    $('writeMsg').className = 'err';
+  }
+};
+async function loadMetrics(){
+  try {
+    const m = await getJSON('/api/metrics');
+    $('metricsBox').textContent = JSON.stringify(m, null, 2);
+  } catch {
+    $('metricsBox').textContent = 'Error loading metrics';
+  }
+}
+loadMetrics();
+</script>
 </body>
 </html>
+
+
+
+
