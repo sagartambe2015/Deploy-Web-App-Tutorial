@@ -3,7 +3,7 @@ import pkg from 'pg';
 const { Pool } = pkg;
 const app = express();
 // --- Config ---
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 const DATABASE_URL = process.env.DATABASE_URL || ''; // empty = in-memory fallback
 app.use(express.json());
 app.use(express.static('public'));
